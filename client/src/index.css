@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold-primary: #FFC857;
+    --gold-light: #F7E7B0;
+    --gold-dark: #B8860B;
+    --arena-bg: #100D08;
+  }
+
+  body {
+    background-color: #100D08;
+    color: #F7E7B0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Metallic Gold Beveled Container */
+.metallic-gold-box {
+  background: radial-gradient(circle at top left, rgba(255, 200, 87, 0.06), transparent 70%), #14100A;
+  border: 2px solid #FFC857;
+  box-shadow: 0 0 18px rgba(255, 200, 87, 0.2), inset 0 0 20px rgba(255, 200, 87, 0.05);
+  position: relative;
+}
+
+/* Chamfered sci-fi corners */
+.chamfer-card {
+  clip-path: polygon(
+    12px 0%, 
+    calc(100% - 12px) 0%, 
+    100% 12px, 
+    100% calc(100% - 12px), 
+    calc(100% - 12px) 100%, 
+    12px 100%, 
+    0% calc(100% - 12px), 
+    0% 12px
+  );
+}
+
+.chamfer-border {
+  position: relative;
+  background: #120E09;
+}
+.chamfer-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #FFC857;
+  clip-path: polygon(
+    14px 0%, 
+    calc(100% - 14px) 0%, 
+    100% 14px, 
+    100% calc(100% - 14px), 
+    calc(100% - 14px) 100%, 
+    14px 100%, 
+    0% calc(100% - 14px), 
+    0% 14px
+  );
+  pointer-events: none;
+  box-shadow: inset 0 0 15px rgba(255, 200, 87, 0.15);
+}
+
+/* Metallic Gold Typography Gradients */
+.gold-metallic-text {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7E7B0 30%, #FFC857 70%, #9E7416 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.gold-glow-text {
+  color: #FFC857;
+  text-shadow: 0 0 12px rgba(255, 200, 87, 0.8), 0 0 25px rgba(255, 200, 87, 0.4);
+}
+
+.gold-glow-subtle {
+  text-shadow: 0 0 8px rgba(255, 200, 87, 0.5);
+}
+
+/* Corner Light Flares */
+.gold-corner-flare {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #F7E7B0;
+  border-radius: 50%;
+  filter: blur(2px);
+  box-shadow: 0 0 10px #FFC857, 0 0 20px #FFC857;
+  pointer-events: none;
+}
+
+/* Glass Panels with Gold Tint */
+.glass-gold-panel {
+  background: rgba(22, 17, 11, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 200, 87, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 200, 87, 0.12);
+}
+
+/* Subtle CRT scanlines */
+.scanlines-gold {
+  background: linear-gradient(
+    rgba(16, 13, 8, 0) 50%, 
+    rgba(0, 0, 0, 0.3) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 200, 87, 0.02),
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 200, 87, 0.02)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Custom Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #100D08;
+}
+::-webkit-scrollbar-thumb {
+  background: #3D2F15;
+  border-radius: 3px;
+  border: 1px solid #FFC857;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC857;
+}
